@@ -12,7 +12,8 @@ def read_data(file_path):
 	num = train['date'].size
 	for i in xrange(0, num):
 		if (train['isHoliday'][i].strip() == u'是') and \
-			(train['holidayCategory'][i].strip() != u'星期六、星期日'):
+			((train['holidayCategory'][i].strip() != u'星期六、星期日') and \
+			(train['holidayCategory'][i].strip() != u'星期日')):
 		
 			if type(train['name'][i]) != float:
 				name = train['name'][i].strip()
